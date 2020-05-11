@@ -120,12 +120,13 @@ if theme.mermaid.enable == true
 `after-footer.ejs` should copy below codes:
 ```
 <% if (theme.mermaid.enable) { %>
-  <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
-  <script>
+<script src='https://unpkg.com/mermaid@<%- theme.mermaid.version %>/dist/mermaid.min.js'></script>
+<% var options = theme.mermaid.options; %>
+<script>
     if (window.mermaid) {
-      mermaid.initialize({theme: 'forest'});
+        mermaid.initialize(<%- JSON.stringify(options) %>);
     }
-  </script>
+</script>
 <% } %>
 ```
 
@@ -145,6 +146,8 @@ swig template engine:
 - className 'mermaid' can be showed mermaid diagrams everywhere
 - Keep dom right;
 - ~~Article preview lists can show code, and post show diagrams;~~
+- fix the render problem of html escape character in the mermaid code.
+- fix the usage of the ejs file typ.
 
 ## Credits
 Thanks to the [Mermaid](https://mermaidjs.github.io/) project!
