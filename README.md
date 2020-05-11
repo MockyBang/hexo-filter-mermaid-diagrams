@@ -92,9 +92,9 @@ After installed, you should edit hexo config file: `_config.yml`:
 # mermaid chart
 mermaid: ## mermaid url https://github.com/knsv/mermaid
   enable: true  # default true
-  version: "7.1.2" # default v7.1.2
-  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
-    #startOnload: true  // default true
+  version: "8.5.0" # default v7.1.2
+  options:    # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+    startOnload: true  // default true
 ```
 > ❗️❗️❗️Notice: if you want to use 'Class diagram', please edit your '_config.yml' file, set `external_link: false`. - hexo bug.
 
